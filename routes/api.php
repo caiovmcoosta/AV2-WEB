@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResource('matriculass', MatriculaController::class);
+Route::apiResource('matriculas', MatriculaController::class);

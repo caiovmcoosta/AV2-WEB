@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Imc extends Model
+class Matricula extends Model
 {
     use HasFactory;
 
@@ -15,10 +15,24 @@ class Imc extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'weight',
-        'height',
-        'result'
+        'Nome Aluno',
+        'Data de Nascimento', 
+        'CPF',
+        'RG',
+        'Nacionalidade',
+        'Email', 
+        'Endereço', 
+        'Complemento', 
+        'Cidade', 
+        'Estado', 
+        'CEP',
+        'Sexo', 
+        'Estado Civil',
+        'Ingressão', 
+        'Período', 
+        'Conclusão Ensino Medio',
+        'Telefone',
+        'Celular'
     ];
 
     /**
@@ -27,7 +41,8 @@ class Imc extends Model
      * @var array
      */
     protected $casts = [
+        /*
         'weight' => 'int',
-        'height' => 'float',
+        'height' => 'float',*/
     ];
 }

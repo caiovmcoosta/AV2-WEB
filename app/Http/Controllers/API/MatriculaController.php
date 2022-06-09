@@ -55,6 +55,8 @@ class MatriculaController extends Controller
         if ($validator->fails()) {
             return response(['error' => $validator->errors(), 'message' => 'Validation Error']);
         }
+        $matricula = Matricula::create($data);
+        return response(['data' => new MatriculaResource($matricula), 'message' => 'Created successfully'], 201);
 
 
     }
@@ -67,7 +69,7 @@ class MatriculaController extends Controller
      */
     public function show(Matricula $matricula)
     {
-        return response(['data' => new MatriculaResource($imc), 'message' => 'Retrieved successfully'], 200);
+        return response(['data' => new MatriculaResource($matricula), 'message' => 'Retrieved successfully'], 200);
     }
 
     /**
@@ -79,9 +81,9 @@ class MatriculaController extends Controller
      */
     public function update(Request $request, Matricula $matricula)
     {
-        $imc->update($request->all());
+        $matricula->update($request->all());
 
-        return response(['data' => new MatriculaResource($Matricula), 'message' => 'Update successfully'], 200);
+        return response(['data' => new MatriculaResource($matricula), 'message' => 'Update successfully'], 200);
     }
 
     /**
